@@ -14,19 +14,19 @@
                 <div class="row">
                     <div class="col-md-2"></div>
                     <div class="col-md-6">
-                        <h3 class="D-block mx-auto"><b><u>Rating Scores</u></b> </h3>
+                        <h3 class="my-3 mx-auto text-left"><b><u>Rate</u></b> </h3>
                         {% for rating in post.ratings.all %}
                         {% if forloop.counter is post.ratings.all.count %}
-                        <a class="btn btn-info btn-md" ><h5>{{ rating.score }}</h5>
+                        <a class="btn btn-warning btn-md" ><h5>{{ rating.score }}</h5>
                             <span class="sc">Average Score</span>
                         </a>
-                        <a class="btn btn-outline-warning btn-md" ><h5>{{ rating.design_average }}</h5>
+                        <a class="btn btn-warning btn-md" ><h5>{{ rating.design_average }}</h5>
                             <span class="sc">Design Average</span>
                         </a>
-                        <a class="btn btn-outline-warning btn-md" ><h5>{{ rating.usability_average }}</h5>
+                        <a class="btn btn-warning btn-md" ><h5>{{ rating.usability_average }}</h5>
                             <span class="sc">Usability Average</span>
                         </a>
-                        <a class="btn btn-outline-warning btn-sm" id="c"><h5>{{ rating.content_average }}</h5>
+                        <a class="btn btn-warning btn-sm" ><h5>{{ rating.content_average }}</h5>
                             <span class="sc">Content Average</span>
                         </a>
                         {% endif %}
@@ -36,7 +36,6 @@
                 </div>
                 
                 {% if rating_status %}
-                <h5>You have already voted</h5>
                 {% else %}
                 {% if user.is_authenticated %}
                 <form action="" method="post" enctype="multipart/form-data">
