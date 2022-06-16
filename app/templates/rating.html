@@ -39,7 +39,7 @@
                 <h5>You have already voted</h5>
                 {% else %}
                 {% if user.is_authenticated %}
-                <form action="" method="POST" enctype="multipart/form-data">
+                <form action="" method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{rating_form|crispy}}
                     <button class="btn btn-sm btn-warning">Rate</button>
